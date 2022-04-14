@@ -1,0 +1,11 @@
+$colors: (
+    orange: rgb(252, 71, 71),
+    navy: rgb(22, 29,47),
+    dark-navy: rgb(16, 20,30),
+    light-blue: rgb(90, 105, 143),
+    white: rgb(255, 255, 255)
+);
+
+@function get-color($color) {
+	@return map-get($colors, $color);
+}
