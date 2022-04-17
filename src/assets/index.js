@@ -3,6 +3,7 @@ export { default as tv } from './icon-category-tv.svg';
 export { default as movie } from './icon-category-movie.svg';
 
 // Navbar
+export { default as logo } from './logo.svg';
 export { default as navBookmark } from './icon-nav-bookmark.svg';
 export { default as home } from './icon-nav-home.svg';
 export { default as navMovies } from './icon-nav-movies.svg';
