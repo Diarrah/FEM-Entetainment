@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { movie as film, bookmarkEmpty, bookmarkFull } from "../assets";
+import { Thumbnail } from "../components";
 import data from '../data.json';
 
 const Movies = () => {
@@ -7,25 +7,18 @@ const Movies = () => {
 
     return (
         <div className="movies">
-            {movies.map(movie => (
-                <div className="movie">
-                    <img 
-                        className="movie__bookmark" 
-                        src={movie.isBookmarked ? bookmarkFull : bookmarkEmpty} 
-                        alt={`${movie.isBookmarked ? 'Full' : 'Empty'} bookmark icon`}
-                    />
-                    <p className="movie__data">
-                        <span className="movie__data--year">{movie.year}</span> ·
-                        <span className="movie__data--icon">
-                            <img src={film} alt="Movie icon" /> {movie.category}
-                        </span> ·
-                        <span className="movie__data--rating">{movie.rating}</span>
-                    </p>
-                    <h3>{movie.title}</h3>
-                </div>
+            <h1>Movies</h1>
+            { movies.map(movie => (
+                <Thumbnail 
+                    key={movie.title}
+                    title={movie.title}
+                    year={movie.year}
+                    category={movie.category}
+                    rating={movie.rating}
+                    bookmark={movie.isBookmarked}                      
+                />
             ))}
         </div>
-            
     )
 }
 
