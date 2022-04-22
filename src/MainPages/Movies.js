@@ -11,6 +11,7 @@ const Movies = () => {
             { movies.map(movie => (
                 <Thumbnail 
                     key={movie.title}
+                    thumbnail={movie.thumbnail}
                     title={movie.title}
                     year={movie.year}
                     category={movie.category}

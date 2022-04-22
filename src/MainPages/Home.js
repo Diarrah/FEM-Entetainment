@@ -5,6 +5,7 @@ import { tv, movie, bookmarkEmpty, bookmarkFull } from '../assets';
 
 const Home = () => {
     console.log(data)
+
     return (
         <div className="Home">
             <div className="trending-container">
@@ -12,7 +13,12 @@ const Home = () => {
                 {data
                     .filter(media => (media.isTrending))
                     .map(media => (
-                        <div className="trending">
+                        <div className="trending" key={media.title}>
+                            <img 
+                                className="trending__backdrop"
+                                src={require(`../assets/thumbnails/${media.thumbnail.trending.large}`)}
+                                alt={`${media.title} thumbnail`}
+                            />
                             <img 
                                 className="trending__bookmark" 
                                 src={media.isBookmarked ? bookmarkFull : bookmarkEmpty} 
@@ -39,6 +45,7 @@ const Home = () => {
                     .map(media => (
                         <Thumbnail 
                             key={media.title}
+                            thumbnail={media.thumbnail}
                             title={media.title}
                             year={media.year}
                             category={media.category}

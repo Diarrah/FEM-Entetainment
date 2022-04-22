@@ -15,6 +15,7 @@ const Bookmarked = () => {
                 { bookmarkedMovies.map(movie => (
                     <Thumbnail
                         key={movie.title}
+                        thumbnail={movie.thumbnail}
                         title={movie.title}
                         year={movie.year}
                         category={movie.category}
@@ -31,6 +32,7 @@ const Bookmarked = () => {
                 { bookmarkedShows.map(show => (
                     <Thumbnail
                         key={show.title}
+                        thumbnail={show.thumbnail}
                         title={show.title}
                         year={show.year}
                         category={show.category}

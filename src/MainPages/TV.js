@@ -11,6 +11,7 @@ const TV = () => {
             { shows.map(show => (
                 <Thumbnail
                     key={show.title}
+                    thumbnail={show.thumbnail}
                     title={show.title}
                     year={show.year}
                     category={show.category}
